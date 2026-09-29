@@ -1226,38 +1226,7 @@ footer {
   }
 
 }
-/* MY JOURNEY / NYSC GALLERY */
-
-.journey {
-  padding: 40px 0 120px;
-  border-top: 1px solid var(--line);
-}
-
-.journey-intro {
-  display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  gap: 60px;
-  margin-bottom: 36px;
-  align-items: start;
-}
-
-.journey-year {
-  display: inline-block;
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
-
-.journey-intro h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 2rem;
-  line-height: 1.1;
-}
-
-.journey-intro p {
-  color: var(--muted);
-  max-width: 680px;
-}
+/* NYSC GALLERY */
 
 .nysc-gallery {
   display: grid;
@@ -1274,63 +1243,94 @@ footer {
 
 .gallery-item img {
   width: 100%;
-  height: 100%;
   display: block;
   object-fit: cover;
   transition: transform 0.35s ease;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.03);
+  transform: scale(1.025);
 }
 
 .gallery-item figcaption {
-  padding: 13px 15px 15px;
+  padding: 12px 14px 14px;
   font-size: 0.82rem;
   color: var(--muted);
   background: var(--paper);
 }
 
-.gallery-featured {
+
+/* 1 — Award: large */
+
+.nysc-gallery .gallery-item:nth-child(1) {
   grid-column: span 8;
 }
 
-.gallery-featured img {
+.nysc-gallery .gallery-item:nth-child(1) img {
   aspect-ratio: 16 / 9;
 }
 
-.nysc-gallery .gallery-item:nth-child(2),
+
+/* 2 — Technical */
+
+.nysc-gallery .gallery-item:nth-child(2) {
+  grid-column: span 4;
+}
+
+.nysc-gallery .gallery-item:nth-child(2) img {
+  aspect-ratio: 4 / 3;
+}
+
+
+/* 3 — OBS Team */
+
 .nysc-gallery .gallery-item:nth-child(3) {
   grid-column: span 4;
 }
 
-.nysc-gallery .gallery-item:nth-child(2) img,
 .nysc-gallery .gallery-item:nth-child(3) img {
   aspect-ratio: 4 / 5;
 }
 
-.nysc-gallery .gallery-item:nth-child(4),
-.nysc-gallery .gallery-item:nth-child(5),
+
+/* 4 — Portrait */
+
+.nysc-gallery .gallery-item:nth-child(4) {
+  grid-column: span 4;
+}
+
+.nysc-gallery .gallery-item:nth-child(4) img {
+  aspect-ratio: 4 / 5;
+}
+
+
+/* 5 — Certificate */
+
 .nysc-gallery .gallery-item:nth-child(6) {
   grid-column: span 4;
 }
 
-.nysc-gallery .gallery-item:nth-child(4) img,
-.nysc-gallery .gallery-item:nth-child(5) img,
 .nysc-gallery .gallery-item:nth-child(6) img {
   aspect-ratio: 4 / 5;
+}
+
+
+/* 6 — Group photo full width */
+
+.nysc-gallery .gallery-item:nth-child(5) {
+  grid-column: 1 / -1;
+}
+
+.nysc-gallery .gallery-item:nth-child(5) img {
+  aspect-ratio: 16 / 6;
 }
 
 
 /* TABLET */
 
 @media (max-width: 900px) {
-  .journey-intro {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
 
-  .gallery-featured,
+  .nysc-gallery .gallery-item:nth-child(1),
   .nysc-gallery .gallery-item:nth-child(2),
   .nysc-gallery .gallery-item:nth-child(3),
   .nysc-gallery .gallery-item:nth-child(4),
@@ -1338,21 +1338,23 @@ footer {
   .nysc-gallery .gallery-item:nth-child(6) {
     grid-column: span 6;
   }
+
+  .nysc-gallery .gallery-item img {
+    aspect-ratio: 4 / 3 !important;
+  }
+
 }
 
 
 /* MOBILE */
 
 @media (max-width: 650px) {
-  .journey {
-    padding-bottom: 85px;
-  }
 
   .nysc-gallery {
     grid-template-columns: 1fr;
   }
 
-  .gallery-featured,
+  .nysc-gallery .gallery-item:nth-child(1),
   .nysc-gallery .gallery-item:nth-child(2),
   .nysc-gallery .gallery-item:nth-child(3),
   .nysc-gallery .gallery-item:nth-child(4),
@@ -1361,13 +1363,9 @@ footer {
     grid-column: auto;
   }
 
-  .gallery-item img,
-  .gallery-featured img,
-  .nysc-gallery .gallery-item:nth-child(2) img,
-  .nysc-gallery .gallery-item:nth-child(3) img,
-  .nysc-gallery .gallery-item:nth-child(4) img,
-  .nysc-gallery .gallery-item:nth-child(5) img,
-  .nysc-gallery .gallery-item:nth-child(6) img {
-    aspect-ratio: 4 / 5;
+  .nysc-gallery .gallery-item img {
+    aspect-ratio: auto !important;
+    height: auto;
   }
+
 }
