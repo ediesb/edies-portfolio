@@ -389,3 +389,72 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "DM Sans", sans-serif;
+  letter-spacing: 0;
+}
+
+.logo-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #111711 0%, #315c3c 100%);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+}
+
+.logo-word {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  position: relative;
+}
+
+.logo-word::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 36%;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.footer-logo .logo-word {
+  color: #ffffff;
+}
+
+.footer-logo .logo-badge {
+  background: linear-gradient(135deg, #ffffff 0%, #b8ff55 100%);
+  color: #121712;
+}
+
+.footer-logo .logo-word::after {
+  background: #b8ff55;
+}
+
+@media (max-width: 650px) {
+  .logo-badge {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 0.76rem;
+  }
+
+  .logo-word {
+    font-size: 1rem;
+  }
+}
